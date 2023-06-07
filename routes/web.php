@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Livewire\Author;
 use App\Http\Livewire\Book;
 use App\Http\Livewire\Category;
@@ -34,6 +37,13 @@ Route::get('/report', Report::class)->name('report');
 Route::get('/settings', Setting::class)->name('settings');
 
 
-Route::get('/', function () {
-    return view('layout.app_public');
-})->name('settings');
+Route::get('/', [BookController::class,'index'])->name('home');
+Route::get('/login', [LoginController::class,'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class,'login'])->name('login');
+Route::get('/register', [RegisterController::class,'showRegisterForm'])->name('register');
+Route::post('/register', [RegisterController::class,'store'])->name('register');
+Route::get('/books/{id}', [BookController::class,'getBook'])->name('book.details');
+
+Route::get('/profile', function (){
+    return view('user.profile');
+})->name('profile');
