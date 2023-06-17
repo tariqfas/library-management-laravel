@@ -25,25 +25,43 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/dashboard', Dashboard::class)->name('dashboard');
-Route::get('/author', Author::class)->name('author');
-Route::get('/category', Category::class)->name('category');
-Route::get('/publisher', Publisher::class)->name('publisher');
-Route::get('/book', Book::class)->name('book');
-Route::get('/student', Student::class)->name('student');
-Route::get('/issue-book', IssueBook::class)->name('issue-book');
-Route::get('/report', Report::class)->name('report');
-Route::get('/settings', Setting::class)->name('settings');
+Route::middleware('role:admin')->group(function () {
+    Route::get('/admin/dashboard', Dashboard::class)->name('dashboard');
+    Route::get('/author', Author::class)->name('author');
+    Route::get('/category', Category::class)->name('category');
+    Route::get('/publisher', Publisher::class)->name('publisher');
+    Route::get('/book', Book::class)->name('book');
+    Route::get('/student', Student::class)->name('student');
+    Route::get('/issue-book', IssueBook::class)->name('issue-book');
+    Route::get('/report', Report::class)->name('report');
+    Route::get('/settings', Setting::class)->name('settings');
+});
 
 
 Route::get('/', [BookController::class,'index'])->name('home');
+// Rating book 
+Route::post('/book/rate', [BookController::class,'rateBookStore'])->name('rate.store');
+
+Route::post('/logout', [LoginController::class,'logout'])->name('logout');
+
 Route::get('/login', [LoginController::class,'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class,'login'])->name('login');
 Route::get('/register', [RegisterController::class,'showRegisterForm'])->name('register');
 Route::post('/register', [RegisterController::class,'store'])->name('register');
 Route::get('/books/{id}', [BookController::class,'getBook'])->name('book.details');
 
-Route::get('/profile', function (){
-    return view('user.profile');
-})->name('profile');
+Route::get('/user/dashboard', function (){
+    return view('user.dashboard');
+})->middleware('role:user')->name('user.dashboard');
+
+// Fallback route for "Not Found" page
+Route::fallback(function () {
+    return view('404'); // Assuming you have a "404.blade.php" file in the "resources/views/errors" directory
+});
+
+// for the regrouping of routes
+/* 
+Route::middleware('role:admin')->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
+});
+*/

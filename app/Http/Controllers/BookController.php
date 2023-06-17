@@ -29,4 +29,19 @@ class BookController extends Controller
         // dd($book->category->category_name);
         return view('productDetails',compact('book',$book));
     }
+    // rate a Book
+    public function rateBookStore(Request $request)
+    {
+        dd($request->all());
+        //code ici 
+        // $book = DB::table('books')->find($id);
+        // $book = Book::where('id',$id)->get();
+
+        // $book = Book::find($id);
+ 
+        // return $book->category->category_name;
+
+        // dd($book->category->category_name);
+        // return view('productDetails',compact('book',$book));
+    }
 }

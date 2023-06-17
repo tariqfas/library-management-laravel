@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <button type="submit" class="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">create
+                    <button type="submit" class="block w-full py-2 text-center text-white bg-red-600 border border-primary rounded hover:bg-red-500 hover:text-primary transition uppercase font-roboto font-medium">create
                         account</button>
                 </div>
             </form>
@@ -80,7 +80,7 @@
             </div>
             <!-- ./login with -->
 
-            <p class="mt-4 text-center text-gray-600">Already have account? <a href="{{route('login')}}" class="text-primary">Login now</a></p>
+            <p class="mt-4 text-center text-gray-600">Already have account? <a href="{{route('login')}}" class="text-red-500">Login now</a></p>
         </div>
     </div>
     <!-- ./login -->

@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <!-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> -->
         <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x"></script> -->
+
         <script src="{{asset('js/init-alpine.js')}}"></script>
         <script src="{{asset('js/charts-bars.js')}}"></script>
         <script src="{{asset('js/charts-lines.js')}}"></script>
