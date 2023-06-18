@@ -26,10 +26,10 @@
                 {{ $errors->first('message') }}
             </div>
         @endif
-            <h2 class="text-2xl uppercase font-medium mb-1">Login</h2>
-            <p class="text-gray-600 mb-6 text-sm">
+            <h2 class="text-2xl font-medium mb-1 text-center ">Login</h2>
+            <!-- <p class="text-gray-600 mb-6 text-sm">
                 welcome back customer
-            </p>
+            </p> -->
             <form action="{{route('login')}}" method="post" autocomplete="off">
                 @csrf
                 <div class="space-y-2">
@@ -48,27 +48,27 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex items-center justify-between mt-6">
+                <!-- <div class="flex items-center justify-between mt-6">
                     <div class="flex items-center">
                         <input type="checkbox" name="remember" id="remember" class="text-primary focus:ring-0 rounded-sm cursor-pointer">
                         <label for="remember" class="text-gray-600 ml-3 cursor-pointer">Remember me</label>
                     </div>
                     <a href="#" class="text-primary">Forgot password</a>
-                </div>
+                </div> -->
                 <div class="mt-4">
-                    <button type="submit" class="block w-full py-2 text-center text-white bg-red-600 border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">Login</button>
+                    <button type="submit" class="block w-full py-2 text-center text-white bg-purple-600 border border-primary rounded hover:bg-purple-700 transition uppercase font-roboto font-medium">Login</button>
                 </div>
             </form>
 
             <!-- login with -->
-            <div class="mt-6 flex justify-center relative">
+            <!-- <div class="mt-6 flex justify-center relative">
                 <div class="text-gray-600 uppercase px-3 bg-white z-10 relative">Or login with</div>
                 <div class="absolute left-0 top-3 w-full border-b-2 border-gray-200"></div>
-            </div>
-            <div class="mt-4 flex gap-4">
+            </div> -->
+            <!-- <div class="mt-4 flex gap-4">
                 <a href="#" class="w-1/2 py-2 text-center text-white bg-blue-800 rounded uppercase font-roboto font-medium text-sm hover:bg-blue-700">facebook</a>
                 <a href="#" class="w-1/2 py-2 text-center text-white bg-red-600 rounded uppercase font-roboto font-medium text-sm hover:bg-red-500">google</a>
-            </div>
+            </div> -->
             <!-- ./login with -->
 
             <p class="mt-4 text-center text-gray-600">Don't have account? <a href="{{route('register')}}" class="text-red-500">Register

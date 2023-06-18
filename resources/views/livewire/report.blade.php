@@ -5,22 +5,22 @@
     </x-slot>
    
     <div class="container my-10">
-        <div class="grid gridcols-1 md:grid-cols-2">
-        <div class="bg-purple-600 p-5">
+        <div class="grid gridcols-1 md:grid-cols-2  my-3 rounded-lg shadow-md p-5 bg-purple-600">
+        <div class="bg-purple-600  ">
             <h1 class="text-4xl text-white">Date Wire Report</h1>
-            <input class="w-full py-3 px-2 my-2 text-sm text-gray-700 placeholder-gray-900 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-500 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-dark focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input " wire:model="dateReport" type="text"/>
-            <button type="submit" class="px-4 py-2 my-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple" wire:click.prevent="getDateReport">
+            <input class="w-full py-3 px-2 my-2 text-sm text-gray-700 placeholder-gray-900 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-500 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-dark focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input " wire:model="dateReport" type="date"/>
+            <button type="submit" class="px-4 py-2 my-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple border-2 border-purple-700" wire:click.prevent="getDateReport">
             Date Wire Report
         </button>
         </div>
         <div class="bg-purple-600 p-5">
-            <h1 class="text-4xl text-white">Date Wire Report</h1>
+            <!-- <h1 class="text-4xl text-white">Date Wire Report</h1> -->
         </div>
         </div>
         <div class="w-full overflow-hidden rounded-lg shadow-xs">
         <div class="w-full overflow-x-auto">
             <!-- Search Issue Book -->
-            <input class="w-100 py-3 px-2 my-2 text-sm text-gray-700 placeholder-gray-900 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-500 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-dark focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input" placeholder="Search Book ..." wire:model="" type="text" />
+            <input class="w-100 py-3 px-2 my-2 text-sm text-gray-700 placeholder-gray-500 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-500 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-dark focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input" placeholder="Search Book ..." wire:model="" type="text" />
             <table class="w-full whitespace-no-wrap">
                 <thead>
                     <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
