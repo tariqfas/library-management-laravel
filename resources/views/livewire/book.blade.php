@@ -97,7 +97,11 @@
                     </tr>
                     <!-- if it is empty -->
                     @empty
-                    <p>No author</p>
+                    <!-- <p>No Book</p> -->
+                    <div class="flex items-center justify-center bg-gray-100">
+    <div class="max-w-md w-full px-6 py-8 bg-white shadow-md">
+        <p class="text-center text-gray-700 text-xl">No Book found</p>
+    </div>
                     <!-- endforelse -->
                     @endforelse
 

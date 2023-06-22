@@ -32,7 +32,7 @@
             wire:model="search"
             type="text" />
             <!-- {{$search}} -->
-            @if($students)
+            @if($students != " ")
             <table class="w-full whitespace-no-wrap">
                 <thead>
                     <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
@@ -91,7 +91,12 @@
                 </tbody>
             </table>
             @else
-            <p>No Student</p>
+            <!-- <p>No Student</p> -->
+            <div class="flex items-center justify-center bg-gray-100">
+    <div class="max-w-md w-full px-6 py-8 bg-white shadow-md">
+        <p class="text-center text-gray-700 text-xl">No Student found</p>
+    </div>
+</div>
             @endif
         </div>
         <!-- <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
