@@ -173,11 +173,23 @@
                 </template>
             </li>
         </ul> -->
-        <div class="px-6 my-6">
+        <div class="px-6 mt-5">
             <!-- <a href="{{route('logout')}}">Logout</a> -->
             <form action="{{route('logout')}}" method="POST">
                 @csrf
-                <button type="submit">Logout</button>
+                <ul>
+                <li class="relative ">
+                <span class="absolute inset-y-0 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
+                <button  type="submit" class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100">
+                    <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21 12L13 12" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M18 15L20.913 12.087V12.087C20.961 12.039 20.961 11.961 20.913 11.913V11.913L18 9" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M16 5V4.5V4.5C16 3.67157 15.3284 3 14.5 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H14.5C15.3284 21 16 20.3284 16 19.5V19.5V19" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+                    </svg>
+                    <span class="ml-4">Logout</span>
+                </button>
+            </li>
+            </ul>
+                
+                <!-- <button type="submit">Logout</button> -->
             </form>
             <!-- <button class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                 Create account

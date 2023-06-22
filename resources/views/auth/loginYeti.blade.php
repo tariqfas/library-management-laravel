@@ -251,7 +251,8 @@
 
 <body>
     <!-- partial:index.partial.html -->
-    <form>
+    <form action="{{route('login')}}" method="post">
+        @csrf
         <div class="svgContainer relative w-[200px] h-[200px]">
             <div class="rounded-full w-full  overflow-hidden pb-[100%]">
                 <svg class="mySVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
@@ -360,12 +361,18 @@
 
         <div class="inputGroup inputGroup1">
             <label class="text-gray-600 mb-2 block" for="loginEmail" id="loginEmailLabel">Email</label>
-            <input type="email" id="loginEmail" maxlength="254" />
+            <input type="email" name="email" id="loginEmail" maxlength="254" />
             <p class="helper helper1">email@domain.com</p>
+            @error('email')
+                <p class="text-red-600">{{$message}}</p>
+            @enderror
         </div>
         <div class="inputGroup inputGroup2">
             <label class="text-gray-600 mb-2 block" for="loginPassword" id="loginPasswordLabel">Password</label>
-            <input type="password" id="loginPassword" />
+            <input type="password" name="password" id="loginPassword" />
+            @error('password')
+                <p class="text-red-600">{{$message}}</p>
+            @enderror
             <label class="text-gray-600 mb-2 block" id="showPasswordToggle" for="showPasswordCheck">Show
                 <input id="showPasswordCheck" type="checkbox" />
                 <div class="indicator"></div>
